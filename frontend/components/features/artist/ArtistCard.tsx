@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { CommissionCard } from '@/types';
 
 interface ArtistCardProps {
@@ -7,7 +8,7 @@ interface ArtistCardProps {
 
 export default function ArtistCard({ commission }: ArtistCardProps) {
     return (
-        <div className="flex flex-col gap-3 break-inside-avoid mb-8 cursor-pointer group">
+        <Link href="/profile" className="flex flex-col gap-3 break-inside-avoid mb-8 cursor-pointer group block">
             {/* Imagen Placeholder (Gris) */}
             <div
                 className={`w-full bg-[#E5E5E5] rounded-3xl transition-transform group-hover:scale-[1.02]`}
@@ -36,6 +37,6 @@ export default function ArtistCard({ commission }: ArtistCardProps) {
                     {commission.artistName}
                 </span>
             </div>
-        </div>
+        </Link>
     );
 }

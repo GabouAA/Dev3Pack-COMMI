@@ -10,6 +10,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  --color-olive: #6B8E23;
+  --color-smoke: #F5F5F5;
+  --color-brown: #4B2C00;
+  --color-gold: #FFD740;
 }
 
 @media (prefers-color-scheme: dark) {
