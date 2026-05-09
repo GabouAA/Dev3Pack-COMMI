@@ -2,50 +2,55 @@ import Link from 'next/link';
 
 export default function Navbar() {
     return (
-        <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <nav className="flex items-center justify-between h-16">
+        <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+            {/* Usamos max-w-[1600px] para que se alinee perfecto con tu video gigante */}
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-8">
+                <nav className="flex items-center justify-between h-20 sm:h-24">
 
                     {/* Logo + links */}
-                    <div className="flex items-center gap-8">
-                        <Link href="/" className="flex items-center gap-2 group">
-                            <div className="w-7 h-7 bg-gray-900 rounded-md flex items-center justify-center">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M2 10 Q7 2 12 10" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-                                    <circle cx="7" cy="5.5" r="1.2" fill="white"/>
+                    <div className="flex items-center gap-6 sm:gap-10">
+                        {/* Logo */}
+                        <Link href="/" className="flex items-center gap-3 group">
+                            <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                                <svg width="20" height="20" viewBox="0 0 14 14" fill="none">
+                                    <path d="M2 10 Q7 2 12 10" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                                    <circle cx="7" cy="5.5" r="1.5" fill="white"/>
                                 </svg>
                             </div>
-                            <span className="text-sm font-medium text-gray-900 tracking-tight">Ilustra</span>
+                            <span className="text-xl font-extrabold text-black tracking-tight">Ilustra</span>
                         </Link>
 
-                        <div className="w-px h-5 bg-gray-200" />
+                        {/* Separador vertical sutil */}
+                        <div className="hidden sm:block w-px h-8 bg-gray-200" />
 
-                        <div className="flex items-center">
+                        {/* Links de navegación */}
+                        <div className="hidden sm:flex items-center gap-1">
                             <Link
                                 href="/comisiones"
-                                className="px-3.5 py-1.5 text-sm text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+                                className="px-5 py-2 text-base font-medium text-gray-500 hover:text-black hover:bg-gray-100/80 rounded-full transition-all duration-300"
                             >
                                 Comisiones
                             </Link>
                             <Link
                                 href="/compra"
-                                className="px-3.5 py-1.5 text-sm text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+                                className="px-5 py-2 text-base font-medium text-gray-500 hover:text-black hover:bg-gray-100/80 rounded-full transition-all duration-300"
                             >
                                 Compra
                             </Link>
                         </div>
                     </div>
 
-                    {/* Acciones */}
-                    <div className="flex items-center gap-2">
-                        <button className="flex items-center gap-1.5 px-4 py-1.5 text-sm text-gray-500 border border-gray-200 rounded-full hover:bg-gray-50 hover:text-gray-800 transition-all">
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="opacity-60">
-                                <circle cx="7" cy="4" r="2.5" stroke="currentColor" strokeWidth="1.4"/>
-                                <path d="M2 12c0-2.8 2.2-4 5-4s5 1.2 5 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+                    {/* Acciones (Botones) */}
+                    <div className="flex items-center gap-3 sm:gap-4">
+                        <button className="hidden sm:flex items-center gap-2 px-6 py-2.5 text-base font-medium text-gray-600 border-2 border-gray-200 rounded-full hover:border-black hover:text-black transition-all duration-300">
+                            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" className="opacity-80">
+                                <circle cx="7" cy="4" r="2.5" stroke="currentColor" strokeWidth="1.5"/>
+                                <path d="M2 12c0-2.8 2.2-4 5-4s5 1.2 5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                             </svg>
                             Soy un ilustrador
                         </button>
-                        <button className="px-4 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-full hover:bg-gray-700 transition-all">
+                        
+                        <button className="px-7 py-3 text-base font-bold text-white bg-black rounded-full hover:bg-gray-800 hover:scale-105 hover:shadow-lg hover:shadow-black/20 transition-all duration-300">
                             Registrarme
                         </button>
                     </div>
