@@ -6,5 +6,6 @@ export interface CommissionCard {
     currency: 'EUR' | 'USD';
     artistName: string;
     artistAvatarUrl?: string;
+    imageUrl?: string;
     imageHeight: string;
 }

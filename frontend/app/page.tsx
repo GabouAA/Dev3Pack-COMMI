@@ -4,14 +4,14 @@ import { CommissionCard } from '@/types';
 
 // Tus datos de prueba siguen igual
 const mockCommissions: CommissionCard[] = [
-  { id: '1', title: 'Diseño de personaje original', days: 7, price: 25, currency: 'EUR', artistName: 'Akemi Art', imageHeight: '320px' },
-  { id: '2', title: 'Diseño de logo para Streamer', days: 5, price: 20, currency: 'EUR', artistName: 'Sora Ilustraciones', imageHeight: '240px' },
-  { id: '3', title: 'Diseño de portada para sencillo musical', days: 10, price: 30, currency: 'USD', artistName: 'Haru Ilustrador', imageHeight: '380px' },
-  { id: '4', title: 'Diseño de personaje original', days: 7, price: 25, currency: 'EUR', artistName: 'Ryuk Art', imageHeight: '260px' },
-  { id: '5', title: 'Ilustración de personaje estilo anime', days: 5, price: 20, currency: 'EUR', artistName: 'Yumi Arts', imageHeight: '300px' },
-  { id: '6', title: 'Diseño de stickers personalizados', days: 10, price: 30, currency: 'USD', artistName: 'Mochi Art', imageHeight: '220px' },
-  { id: '7', title: 'Ilustración de mascota', days: 5, price: 20, currency: 'EUR', artistName: 'Kuroo Sensei', imageHeight: '200px' },
-  { id: '8', title: 'Diseño de banner para redes sociales', days: 10, price: 30, currency: 'USD', artistName: 'Kenji Designs', imageHeight: '180px' },
+  { id: '1', title: 'Diseño de personaje original', days: 7, price: 25, currency: 'EUR', artistName: 'Akemi Art', imageHeight: '320px', imageUrl: 'https://images.unsplash.com/photo-1580136608260-4eb11f4b24fe?q=80&w=2052&auto=format&fit=crop' },
+  { id: '2', title: 'Diseño de logo para Streamer', days: 5, price: 20, currency: 'EUR', artistName: 'Sora Ilustraciones', imageHeight: '240px', imageUrl: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop' },
+  { id: '3', title: 'Diseño de portada para sencillo musical', days: 10, price: 30, currency: 'USD', artistName: 'Haru Ilustrador', imageHeight: '380px', imageUrl: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?q=80&w=1909&auto=format&fit=crop' },
+  { id: '4', title: 'Diseño de personaje original', days: 7, price: 25, currency: 'EUR', artistName: 'Ryuk Art', imageHeight: '260px', imageUrl: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop' },
+  { id: '5', title: 'Ilustración de personaje estilo anime', days: 5, price: 20, currency: 'EUR', artistName: 'Yumi Arts', imageHeight: '300px', imageUrl: 'https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1910&auto=format&fit=crop' },
+  { id: '6', title: 'Diseño de stickers personalizados', days: 10, price: 30, currency: 'USD', artistName: 'Mochi Art', imageHeight: '220px', imageUrl: 'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=1926&auto=format&fit=crop' },
+  { id: '7', title: 'Ilustración de mascota', days: 5, price: 20, currency: 'EUR', artistName: 'Kuroo Sensei', imageHeight: '200px', imageUrl: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2071&auto=format&fit=crop' },
+  { id: '8', title: 'Diseño de banner para redes sociales', days: 10, price: 30, currency: 'USD', artistName: 'Kenji Designs', imageHeight: '180px', imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop' },
 ];
 
 const categories = ['Retrato', 'Personaje original', 'Ilustración completa', 'Stickers', 'Portadas', 'FanArt'];

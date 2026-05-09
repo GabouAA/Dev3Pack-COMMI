@@ -35,10 +35,19 @@ const FacebookIcon = ({ className }: { className?: string }) => (
 type Tab = 'Comisiones' | 'Publicaciones' | 'Portafolio'
 
 const mockCommissions = [
-  { id: '1', title: 'Diseño de personaje original', days: 7, price: 15, currency: 'SOL' },
-  { id: '2', title: 'Ilustración estilo Anime', days: 5, price: 10, currency: 'SOL' },
-  { id: '3', title: 'Diseño de Logo (Streamer)', days: 10, price: 20, currency: 'SOL' },
-  { id: '4', title: 'Emotes para Twitch (Pack)', days: 4, price: 5, currency: 'SOL' },
+  { id: '1', title: 'Diseño de personaje original', days: 7, price: 15, currency: 'SOL', image: 'https://images.unsplash.com/photo-1580136608260-4eb11f4b24fe?q=80&w=2052&auto=format&fit=crop' },
+  { id: '2', title: 'Ilustración estilo Anime', days: 5, price: 10, currency: 'SOL', image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop' },
+  { id: '3', title: 'Diseño de Logo (Streamer)', days: 10, price: 20, currency: 'SOL', image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop' },
+  { id: '4', title: 'Emotes para Twitch (Pack)', days: 4, price: 5, currency: 'SOL', image: 'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=1926&auto=format&fit=crop' },
+]
+
+const portfolioImages = [
+  "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1910&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1580136608260-4eb11f4b24fe?q=80&w=2052&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1974&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1561214115-f2f134cc4912?q=80&w=1909&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2071&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=1926&auto=format&fit=crop"
 ]
 
 export default function UserProfile() {
@@ -79,10 +88,19 @@ export default function UserProfile() {
 
         {/* Banner */}
         <div className="w-full h-48 sm:h-64 bg-smoke rounded-3xl relative border border-gray-200 shadow-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2071&auto=format&fit=crop" 
+            alt="Banner de arte abstracto" 
+            className="w-full h-full object-cover rounded-3xl" 
+          />
           {/* Avatar (Left aligned) */}
           <div className="absolute -bottom-16 left-8 sm:left-12">
             <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-[6px] border-white bg-smoke shadow-sm flex items-center justify-center overflow-hidden">
-                <div className="w-full h-full bg-smoke"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" 
+                  alt="Avatar del artista" 
+                  className="w-full h-full object-cover" 
+                />
             </div>
           </div>
         </div>
@@ -188,7 +206,13 @@ export default function UserProfile() {
                           transition={{ type: "spring", stiffness: 400, damping: 25 }}
                         >
                           {/* Image Placeholder */}
-                          <div className="w-full h-48 bg-smoke border border-gray-200 rounded-3xl" />
+                          <div className="w-full h-48 bg-smoke border border-gray-200 rounded-3xl overflow-hidden">
+                            <img 
+                              src={comm.image} 
+                              alt={`Ilustración para ${comm.title}`} 
+                              className="w-full h-full object-cover" 
+                            />
+                          </div>
                           
                           {/* Badges */}
                           <div className="flex items-center justify-between px-1">
@@ -232,8 +256,14 @@ export default function UserProfile() {
                     transition={{ duration: 0.2 }}
                     className="grid grid-cols-2 sm:grid-cols-3 gap-4"
                   >
-                    {[1, 2, 3, 4, 5, 6].map((item) => (
-                      <div key={item} className="aspect-square bg-gray-100 border border-gray-200 rounded-2xl hover:bg-gray-200 transition-colors cursor-pointer" />
+                    {portfolioImages.map((img, index) => (
+                      <div key={index} className="aspect-square bg-smoke border border-gray-200 rounded-2xl overflow-hidden cursor-pointer">
+                        <img 
+                          src={img} 
+                          alt={`Trabajo de portafolio ${index + 1}`} 
+                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" 
+                        />
+                      </div>
                     ))}
                   </motion.div>
                 )}

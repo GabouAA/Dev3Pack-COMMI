@@ -143,10 +143,16 @@ export default function Dashboard() {
                 <h3 className="text-lg font-semibold text-brown pl-2">Categoría {cat}</h3>
                 <motion.div 
                   whileHover={{ scale: 1.01 }}
-                  className="w-full h-48 md:h-64 bg-[#A8A09A]/20 rounded-3xl border-2 border-[#A8A09A]/40 transition-all duration-300 cursor-pointer flex items-center justify-center group hover:bg-[#A8A09A]/30 hover:border-olive"
+                  className="w-full h-48 md:h-64 rounded-3xl border-2 border-transparent transition-all duration-300 cursor-pointer flex items-center justify-center group hover:border-olive overflow-hidden relative"
                 >
-                   <p className="text-brown font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2">
-                     <Plus className="w-5 h-5 text-olive" /> Agregar contenido
+                   <img 
+                      src={index === 0 ? "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2071&auto=format&fit=crop" : "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1910&auto=format&fit=crop"} 
+                      alt={`Categoría ${cat}`} 
+                      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" 
+                   />
+                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                   <p className="relative z-10 text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 bg-black/50 px-4 py-2 rounded-full">
+                     <Plus className="w-5 h-5 text-gold" /> Ver detalles
                    </p>
                 </motion.div>
               </motion.div>
