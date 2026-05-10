@@ -12,6 +12,7 @@ export type Artist = {
   online: boolean;
   bio: string;
   country: string;
+  pubkey: string;
 };
 
 const banners = (seed: number) => `https://picsum.photos/seed/commi-b-${seed}/800/400`;
@@ -30,6 +31,7 @@ export const artists: Artist[] = [
     online: true,
     bio: "Ilustradora de personajes y retratos estilo anime. Trabajo desde Argentina ✦",
     country: "Argentina",
+    pubkey: "Cb9492Hmos3j9mwV14TpkwvFc8dX7KvX7Kr1QgXup9k5",
   },
   {
     handle: "marcobrush",
@@ -43,6 +45,7 @@ export const artists: Artist[] = [
     online: false,
     bio: "Concept artist freelance. Mundos, criaturas, props. México 🌵",
     country: "México",
+    pubkey: "CzFz8Mz5mGACYoCKi3GdrB5jbiiVioE1xbgxPKRwzmQr",
   },
   {
     handle: "sofipixel",
@@ -56,6 +59,7 @@ export const artists: Artist[] = [
     online: true,
     bio: "Pixel art y chibis adorables. Colombia.",
     country: "Colombia",
+    pubkey: "7wTKwrH7hXqDD2fYiXatrntYnGHTnG8yfdGNsP6CADDW",
   },
   {
     handle: "kenjidraws",
@@ -69,6 +73,7 @@ export const artists: Artist[] = [
     online: true,
     bio: "Portadas de novelas y FanArt. Lima, Perú.",
     country: "Perú",
+    pubkey: "BGVdSG7zdrT8CWdfiyDJyYFb8RvAFyDC5TTatTRCq7Ny",
   },
   {
     handle: "ainestudio",
@@ -82,6 +87,7 @@ export const artists: Artist[] = [
     online: true,
     bio: "Stickers, emotes y chibis para streamers.",
     country: "Chile",
+    pubkey: "6GsMFeW2AG6zbVd8XSfGo5CpMjkMHv835s1gLdoYHcaE",
   },
   {
     handle: "diegoart",
@@ -95,6 +101,7 @@ export const artists: Artist[] = [
     online: false,
     bio: "Ilustración editorial y carteles.",
     country: "Uruguay",
+    pubkey: "A882NxB5V8GgWB1CZ2koFmB695WhfPb1ACY7s17MBui5",
   },
   {
     handle: "miacolor",
@@ -108,6 +115,7 @@ export const artists: Artist[] = [
     online: true,
     bio: "Retratos realistas y semi-realistas.",
     country: "Bolivia",
+    pubkey: "BmFoJZjrGTFK1j7oC1d33b7bYba5Dv3DJ7nw2r3q1Pe2",
   },
   {
     handle: "tomoworld",
@@ -121,6 +129,7 @@ export const artists: Artist[] = [
     online: false,
     bio: "Mechas, vehículos y sci-fi.",
     country: "Ecuador",
+    pubkey: "9p8dqHF66Sf3GR9wVaAz57ZnGovyQFJZaPiwLshZaJPU",
   },
 ];
 

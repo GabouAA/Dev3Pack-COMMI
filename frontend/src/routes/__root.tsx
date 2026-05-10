@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { SolanaProvider } from "../providers/SolanaProvider";
 
 function NotFoundComponent() {
   return (
@@ -108,12 +109,17 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+import { Toaster } from "sonner";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <SolanaProvider>
+        <Outlet />
+        <Toaster position="bottom-right" richColors />
+      </SolanaProvider>
     </QueryClientProvider>
   );
 }

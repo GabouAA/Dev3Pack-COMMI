@@ -1,0 +1,559 @@
+{
+  "address": "8xd2LdCeLpjxehjws8NYfF7CqwPMY2veWjhaSUKLnvwp",
+  "metadata": {
+    "name": "estructura_blokchain",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "accept_commission",
+      "discriminator": [
+        98,
+        115,
+        188,
+        73,
+        46,
+        98,
+        188,
+        66
+      ],
+      "accounts": [
+        {
+          "name": "artist",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "commission"
+          ]
+        },
+        {
+          "name": "client",
+          "relations": [
+            "commission"
+          ]
+        },
+        {
+          "name": "commission",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  109,
+                  109,
+                  105,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "client"
+              },
+              {
+                "kind": "account",
+                "path": "artist"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "approve_work",
+      "discriminator": [
+        181,
+        118,
+        45,
+        143,
+        204,
+        88,
+        237,
+        109
+      ],
+      "accounts": [
+        {
+          "name": "client",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "commission"
+          ]
+        },
+        {
+          "name": "artist",
+          "writable": true
+        },
+        {
+          "name": "commission",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  109,
+                  109,
+                  105,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "client"
+              },
+              {
+                "kind": "account",
+                "path": "artist"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "commission"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "create_commission",
+      "discriminator": [
+        142,
+        218,
+        95,
+        250,
+        188,
+        9,
+        58,
+        75
+      ],
+      "accounts": [
+        {
+          "name": "client",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "artist",
+          "docs": [
+            "Artista acordado (no firma en esta instrucción)."
+          ]
+        },
+        {
+          "name": "commission",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  109,
+                  109,
+                  105,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "client"
+              },
+              {
+                "kind": "account",
+                "path": "artist"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "commission"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "deadline",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "deliver_work",
+      "discriminator": [
+        216,
+        22,
+        122,
+        24,
+        167,
+        30,
+        208,
+        169
+      ],
+      "accounts": [
+        {
+          "name": "artist",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "commission"
+          ]
+        },
+        {
+          "name": "client",
+          "relations": [
+            "commission"
+          ]
+        },
+        {
+          "name": "commission",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  109,
+                  109,
+                  105,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "client"
+              },
+              {
+                "kind": "account",
+                "path": "artist"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "refund",
+      "discriminator": [
+        2,
+        96,
+        183,
+        251,
+        63,
+        208,
+        46,
+        46
+      ],
+      "accounts": [
+        {
+          "name": "client",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "commission"
+          ]
+        },
+        {
+          "name": "artist"
+        },
+        {
+          "name": "commission",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  109,
+                  109,
+                  105,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "client"
+              },
+              {
+                "kind": "account",
+                "path": "artist"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "commission"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Commission",
+      "discriminator": [
+        152,
+        254,
+        124,
+        223,
+        255,
+        105,
+        124,
+        133
+      ]
+    },
+    {
+      "name": "CommissionVault",
+      "discriminator": [
+        15,
+        176,
+        110,
+        242,
+        56,
+        3,
+        171,
+        26
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Unauthorized",
+      "msg": "Unauthorized"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidStatus",
+      "msg": "Invalid commission status for this instruction"
+    },
+    {
+      "code": 6002,
+      "name": "DeadlineNotReached",
+      "msg": "Refund deadline has not been reached yet"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidVault",
+      "msg": "Vault account does not match this commission"
+    },
+    {
+      "code": 6004,
+      "name": "InsufficientVaultBalance",
+      "msg": "Insufficient lamports in escrow vault for this operation"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidAmount",
+      "msg": "Escrow amount must be greater than zero"
+    },
+    {
+      "code": 6006,
+      "name": "InvalidDeadline",
+      "msg": "Deadline must be strictly in the future at commission creation"
+    },
+    {
+      "code": 6007,
+      "name": "LamportsOverflow",
+      "msg": "Lamports overflow on payout destination"
+    }
+  ],
+  "types": [
+    {
+      "name": "Commission",
+      "docs": [
+        "Metadatos de la comisión / escrow (cuenta PDA del programa)."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "client",
+            "type": "pubkey"
+          },
+          {
+            "name": "artist",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "CommissionStatus"
+              }
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "deadline",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CommissionStatus",
+      "docs": [
+        "Estados del flujo MVP (transiciones solo vía helpers [`CommissionStatus::require_*`])."
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Open"
+          },
+          {
+            "name": "Accepted"
+          },
+          {
+            "name": "Delivered"
+          },
+          {
+            "name": "Approved"
+          },
+          {
+            "name": "Cancelled"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CommissionVault",
+      "docs": [
+        "Vault PDA (`seeds = [SEED_VAULT, commission.key()]`) que custodia los lamports del escrow."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "commission",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "constants": [
+    {
+      "name": "SEED_COMMISSION",
+      "type": "bytes",
+      "value": "[99, 111, 109, 109, 105, 115, 115, 105, 111, 110]"
+    },
+    {
+      "name": "SEED_VAULT",
+      "type": "bytes",
+      "value": "[118, 97, 117, 108, 116]"
+    }
+  ]
+}

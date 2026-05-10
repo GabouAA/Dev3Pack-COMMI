@@ -21,6 +21,7 @@ import { Route as DashboardPortafolioRouteImport } from './routes/dashboard/port
 import { Route as DashboardPoliticasRouteImport } from './routes/dashboard/politicas'
 import { Route as DashboardFormulariosRouteImport } from './routes/dashboard/formularios'
 import { Route as DashboardComisionesRouteImport } from './routes/dashboard/comisiones'
+import { Route as CommissionNewHandleRouteImport } from './routes/commission/new/$handle'
 
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
@@ -82,6 +83,11 @@ const DashboardComisionesRoute = DashboardComisionesRouteImport.update({
   path: '/dashboard/comisiones',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommissionNewHandleRoute = CommissionNewHandleRouteImport.update({
+  id: '/commission/new/$handle',
+  path: '/commission/new/$handle',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/wallet': typeof DashboardWalletRoute
   '/profile/$handle': typeof ProfileHandleRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/commission/new/$handle': typeof CommissionNewHandleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/dashboard/wallet': typeof DashboardWalletRoute
   '/profile/$handle': typeof ProfileHandleRoute
   '/dashboard': typeof DashboardIndexRoute
+  '/commission/new/$handle': typeof CommissionNewHandleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/dashboard/wallet': typeof DashboardWalletRoute
   '/profile/$handle': typeof ProfileHandleRoute
   '/dashboard/': typeof DashboardIndexRoute
+  '/commission/new/$handle': typeof CommissionNewHandleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/dashboard/wallet'
     | '/profile/$handle'
     | '/dashboard/'
+    | '/commission/new/$handle'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/dashboard/wallet'
     | '/profile/$handle'
     | '/dashboard'
+    | '/commission/new/$handle'
   id:
     | '__root__'
     | '/'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/dashboard/wallet'
     | '/profile/$handle'
     | '/dashboard/'
+    | '/commission/new/$handle'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -184,6 +196,7 @@ export interface RootRouteChildren {
   DashboardWalletRoute: typeof DashboardWalletRoute
   ProfileHandleRoute: typeof ProfileHandleRoute
   DashboardIndexRoute: typeof DashboardIndexRoute
+  CommissionNewHandleRoute: typeof CommissionNewHandleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -272,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardComisionesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/commission/new/$handle': {
+      id: '/commission/new/$handle'
+      path: '/commission/new/$handle'
+      fullPath: '/commission/new/$handle'
+      preLoaderRoute: typeof CommissionNewHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -288,6 +308,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardWalletRoute: DashboardWalletRoute,
   ProfileHandleRoute: ProfileHandleRoute,
   DashboardIndexRoute: DashboardIndexRoute,
+  CommissionNewHandleRoute: CommissionNewHandleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
